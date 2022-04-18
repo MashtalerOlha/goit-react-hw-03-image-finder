@@ -1,11 +1,11 @@
-import { api } from './Api/Api';
+import { api } from '../Api/Api';
 import React, { Component } from 'react';
-import Searchbar from './Searchbar/Searchbar';
-import {ImageGallery} from './ImageGallery/ImageGallery';
-import {Spiner} from './Loader/Loader';
-import {LoadMore} from './Button/Button';
+import Searchbar from '../Searchbar/Searchbar';
+import {ImageGallery} from '../ImageGallery/ImageGallery';
+import {Spiner} from '../Loader/Loader';
+import {LoadMore} from '../Button/Button';
 import SimpleLightbox from 'simplelightbox';
-
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 
 export class App extends Component {
@@ -15,6 +15,7 @@ export class App extends Component {
     page: 1,
     status: 'idle',
   };
+
 
   LoadMorePhoto = () => {
     this.setState(prevState => ({
@@ -38,6 +39,7 @@ export class App extends Component {
     if (prevState.searchQuery !== searchQuery) {
       this.setState({ imageCard: [] });
     }
+
     if (prevState.searchQuery !== searchQuery || prevState.page !== page) {
       this.setState({ status: 'pending' });
       api
@@ -74,7 +76,7 @@ export class App extends Component {
     }
 
     if (status === 'rejected') {
-      return;
+      return(console.log('cgvh'))
     }
   }
 }

@@ -1,9 +1,11 @@
+import s from './ImageGalleryItem.module.css'
+
 
 export const ImageGalleryItem = ({ imageCard }) => {
     return imageCard.map(({ id, webformatURL, largeImageURL, tags }) => (
-      <li key={id}>
+      <li className={s.ImageGalleryItem} key={id}>
         <a href={largeImageURL}>
-          <img src={webformatURL} alt={tags} />
+          <img className={s.ImageGalleryItemImage} src={webformatURL} alt={tags} />
         </a>
       </li>
     ));
