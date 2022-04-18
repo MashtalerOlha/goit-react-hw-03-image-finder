@@ -1,12 +1,11 @@
 import { api } from '../Api/Api';
 import React, { Component } from 'react';
 import Searchbar from '../Searchbar/Searchbar';
-import {ImageGallery} from '../ImageGallery/ImageGallery';
-import {Spiner} from '../Loader/Loader';
-import {LoadMore} from '../Button/Button';
+import { ImageGallery } from '../ImageGallery/ImageGallery';
+import { Spiner } from '../Loader/Loader';
+import { LoadMore } from '../Button/Button';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-
 
 export class App extends Component {
   state = {
@@ -15,7 +14,6 @@ export class App extends Component {
     page: 1,
     status: 'idle',
   };
-
 
   LoadMorePhoto = () => {
     this.setState(prevState => ({
@@ -52,6 +50,10 @@ export class App extends Component {
         })
         .catch(error => this.setState({ error, status: 'rejected' }));
     }
+
+    // if(this.state.status === 'resolve' || nextName.length ===0 ){
+    //   console.log('not found')
+    // }
   }
 
   render() {
@@ -76,7 +78,7 @@ export class App extends Component {
     }
 
     if (status === 'rejected') {
-      return(console.log('cgvh'))
+      return;
     }
   }
 }

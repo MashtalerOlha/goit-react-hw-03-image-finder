@@ -1,20 +1,15 @@
+const KEY = '25246823-37314bed22bcdc498ffe68995';
 
-const KEY = "25246823-37314bed22bcdc498ffe68995";
+function fetchImage(searchQuery, page) {
+  return fetch(
+    `https://pixabay.com/api/?q=${searchQuery}&page=${page}&key=${KEY}&image_type=photo&orientation=horizontal&per_page=12`
+  ).then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+  });
+}
 
-function fetchImage (searchQuery, page) {
-        return fetch(
-          `https://pixabay.com/api/?q=${searchQuery}&page=${page}&key=${KEY}&image_type=photo&orientation=horizontal&per_page=12`
-        ).then(response => {
-          if (response.ok) {
-            return response.json();
-          }
-      
-          return Promise.reject(
-            new Error(`Picture with name ${searchQuery} not found`)
-          );
-        });
-     }
-
-     export const api = {
-        fetchImage,
-      };
+export const api = {
+  fetchImage,
+};

@@ -1,15 +1,12 @@
 import { Component } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import s from './Searchbar.module.css'
+import s from './Searchbar.module.css';
 import { FaSearch } from 'react-icons/fa';
-
-
 
 export default class SearchForm extends Component {
   state = {
     imageCard: [],
     searchName: '',
-
   };
 
   handleNameSearch = e => {
@@ -37,7 +34,7 @@ export default class SearchForm extends Component {
           <FaSearch className={s.svg} />
 
           <input
-          className={s.SearchFormInput}
+            className={s.SearchFormInput}
             name="searchName"
             value={this.state.searchName}
             onChange={this.handleNameSearch}
