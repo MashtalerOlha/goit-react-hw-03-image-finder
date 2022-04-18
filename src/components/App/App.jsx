@@ -26,7 +26,9 @@ export class App extends Component {
   };
 
   simpleLightbox = () => {
-    var lightbox = new SimpleLightbox('.gallery a', {});
+    var lightbox = new SimpleLightbox('.gallery a', {
+      captionsData: "alt",
+    });
     lightbox.refresh();
   };
 
